@@ -8,6 +8,11 @@
   ],
   "routes": [
     {
+      "src": "/send-location",
+      "methods": ["POST"],
+      "dest": "server.js"
+    },
+    {
       "src": "/(.*)",
       "dest": "server.js"
     }
