@@ -19,10 +19,10 @@ app.post("/send-location", async (req, res) => {
 
   try {
     // Envia a localização para o Telegram
-    // await axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-    //   chat_id: TELEGRAM_CHAT_ID,
-    //   text: message,
-    // });
+    await axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+      chat_id: TELEGRAM_CHAT_ID,
+      text: message,
+    });
 
     const options = {
       method: 'POST',
