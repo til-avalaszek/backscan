@@ -21,11 +21,8 @@
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
 
-      console.log("Latitude: " + latitude);
-      console.log("Longitude: " + longitude);
-
       // Envia a localização para o backend
-      fetch("NGROK-SERVER/send-location", {
+      fetch("send-location", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
