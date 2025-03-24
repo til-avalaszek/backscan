@@ -19,16 +19,16 @@ app.post("/send-location", async (req, res) => {
 
   try {
     // Envia a localização para o Telegram
-    await axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-      chat_id: TELEGRAM_CHAT_ID,
-      text: message,
-    });
+    // await axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+    //   chat_id: TELEGRAM_CHAT_ID,
+    //   text: message,
+    // });
 
     const options = {
       method: 'POST',
       headers: {
         accept: 'application/json',
-        'User-Agent': 'Telegram Bot SDK - (https://github.com/irazasyed/telegram-bot-sdk)',
+        'User-Agent': 'Telegram Bot SDK',
         'content-type': 'application/json'
       },
       body: JSON.stringify({
