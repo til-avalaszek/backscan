@@ -39,7 +39,7 @@ app.post("/send-location", async (req, res) => {
       })
     };
     
-    fetch(`https://api.telegram.org/bott${TELEGRAM_BOT_TOKEN}/sendLocation`, options)
+    fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendLocation`, options)
       .then(res => res.json())
       .then(res => console.log(res))
       .catch(err => console.error(err));
