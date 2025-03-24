@@ -31,6 +31,10 @@ app.post("send-location", async (req, res) => {
   }
 });
 
-app.listen(8088, () => {
-  console.log("Servidor rodando na porta 8088");
-});
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(8088, () => {
+    console.log("Servidor rodando na porta 8088");
+  });
+}
+
+module.exports = app;
