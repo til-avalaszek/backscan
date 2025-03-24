@@ -24,6 +24,26 @@ app.post("/send-location", async (req, res) => {
       text: message,
     });
 
+    const options = {
+      method: 'POST',
+      headers: {
+        accept: 'application/json',
+        'User-Agent': 'Telegram Bot SDK - (https://github.com/irazasyed/telegram-bot-sdk)',
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        latitude: latitude,
+        longitude: longitude,
+        disable_notification: false,
+        reply_to_message_id: null
+      })
+    };
+    
+    fetch(`https://api.telegram.org/bott${TELEGRAM_BOT_TOKEN}/sendLocation`, options)
+      .then(res => res.json())
+      .then(res => console.log(res))
+      .catch(err => console.error(err));
+
     res.status(200).json({ success: true });
   } catch (error) {
     console.log(error);
