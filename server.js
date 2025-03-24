@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID
 
-app.post("/send-location", async (req, res) => {
+app.post("send-location", async (req, res) => {
   const { latitude, longitude } = req.body;
 
   const message = `A localização do usuário é:\nLatitude: ${latitude}\nLongitude: ${longitude}`;
